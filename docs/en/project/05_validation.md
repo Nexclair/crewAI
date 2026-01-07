@@ -9,9 +9,12 @@ This document defines how requirements are validated to ensure compliance with t
 
 | Level | Method | Tool | Target |
 | :--- | :--- | :--- | :--- |
-| **Unit** | Automated | Pytest | Core logic, Agent class, Task class. |
-| **Integration**| Automated | Pytest | Crew/Flow orchestration, YAML parsing. |
-| **E2E** | Automated | Pytest | Complete agent workflows, CLI commands. |
+| **Unit** | Automated | Pytest (+ plugins like `asyncio`) | Core logic, Agent class, Task class. |
+| **Integration**| Automated | Pytest (+ `recording`, `vcrpy`) | Crew/Flow orchestration, YAML parsing. |
+| **E2E** | Automated | Pytest (+ `subprocess`) | Complete agent workflows, CLI commands. |
+| **Linting** | Automated | Ruff | Code style, formatting, and quick fixes. |
+| **Type Check** | Automated | Mypy | Static type safety and interface validation. |
+| **Security** | Automated | Bandit | Automated security vulnerability scanning. |
 | **Manual** | Human | Shell | UI/UX fidelity in AMP Suite. |
 | **AI-Audit** | Agent | Antigravity | Principle compliance (Agent-First, 5-Minute Rule). |
 
